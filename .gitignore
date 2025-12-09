@@ -1,6 +1,6 @@
 # Node modules
 node_modules/
-config/firebase
+config/firebase/*.json
 
 # Logs
 logs
