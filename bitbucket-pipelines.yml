@@ -1,0 +1,8 @@
+pipelines:
+  branches:
+    main:
+      - step:
+          name: Deploy to Stage
+          image: atlassian/default-image:2
+          script:
+            - ssh "$SSH_USER@$SSH_SERVER" "bash /home/ubuntu/bash-scripts/habbit-time.sh"
