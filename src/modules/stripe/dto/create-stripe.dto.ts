@@ -1,1 +1,3 @@
-export class CreateStripeDto {}
+export class CreateStripeDto {
+    user: Object
+}

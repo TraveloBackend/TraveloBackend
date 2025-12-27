@@ -3,34 +3,34 @@ import { RiderTypeService } from './riderType.service';
 import { CreateRiderTypeDto } from './dto/create-riderType.dto';
 import {UpdateRiderTypeDto } from './dto/update-riderType.dto';
 
-@Controller('vehicle-fee')
-export class VehicleFeeController {
+@Controller('riderType')
+export class RiderTypeController {
   constructor(private readonly riderTypeService: RiderTypeService) {}
 
   @Post('create')
  async create(@Body() createRiderTypeDto: CreateRiderTypeDto) {
-    console.log(createRiderTypeDto,"createVehicleFeeDto")
+    
     const data = await this.riderTypeService.create(createRiderTypeDto);
     return data
   }
 
-  // @Get()
-  // findAll() {
-  //   return this.vehicleFeeService.findAll();
-  // }
+  @Get()
+  findAll() {
+    return this.riderTypeService.findAll();
+  }
 
-  // @Get(':id')
-  // findOne(@Param('id') id: string) {
-  //   return this.vehicleFeeService.findOne(+id);
-  // }
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.riderTypeService.findOne(id);
+  }
 
-  // @Patch(':id')
-  // update(@Param('id') id: string, @Body() updateVehicleFeeDto: UpdateVehicleFeeDto) {
-  //   return this.vehicleFeeService.update(+id, updateVehicleFeeDto);
-  // }
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() updateRiderTypeDto: UpdateRiderTypeDto) {
+    return this.riderTypeService.update(id, updateRiderTypeDto);
+  }
 
-  // @Delete(':id')
-  // remove(@Param('id') id: string) {
-  //   return this.vehicleFeeService.remove(+id);
-  // }
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return this.riderTypeService.remove(id);
+  }
 }

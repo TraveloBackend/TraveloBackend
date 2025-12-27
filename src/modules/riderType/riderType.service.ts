@@ -14,7 +14,6 @@ export class RiderTypeService {
 
   async create(createRiderTypeDto: CreateRiderTypeDto) {
     const vehicleFee = await this.riderTypeModel.create(createRiderTypeDto);
-    console.log(vehicleFee,"inside service")
     return {message:"Vehicle fee created successfully.",data:vehicleFee};
   }
 

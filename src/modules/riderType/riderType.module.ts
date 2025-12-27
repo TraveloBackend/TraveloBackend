@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { RiderTypeService } from './riderType.service';
-import { VehicleFeeController } from './riderType.controller';
+import { RiderTypeController } from './riderType.controller';
 import { RiderType,RiderTypeSchema } from './entities/riderType.entity';
 import { MongooseModule } from '@nestjs/mongoose';
 
@@ -10,7 +10,7 @@ import { MongooseModule } from '@nestjs/mongoose';
       { name: RiderType.name, schema: RiderTypeSchema },
     ]),
   ],
-  controllers: [VehicleFeeController],
+  controllers: [RiderTypeController],
   providers: [RiderTypeService],
 })
 export class RiderTypeModule {}

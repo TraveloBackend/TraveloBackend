@@ -3,7 +3,7 @@ import { Document } from 'mongoose';
 
 @Schema({ timestamps: true })
 export class RiderType extends Document {
-  @Prop({ required: true, min: 1 })
+  @Prop({ required: true, min: 1 , unique:true})
   seat_count: number;
 
   @Prop({ required: true, min: 0 })

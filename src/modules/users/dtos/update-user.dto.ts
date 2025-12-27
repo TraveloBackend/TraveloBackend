@@ -108,4 +108,7 @@ export class UpdateUserDto {
   @IsOptional()
   @IsMongoId()
   riderType?: string;
+
+   @IsOptional()
+  stripeCustomerId: string;
 }
